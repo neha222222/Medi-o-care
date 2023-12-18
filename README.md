@@ -54,13 +54,11 @@ Health bot
 ![image](https://github.com/neha222222/Medi-o-care/assets/132138786/3e21f378-88bc-4fb4-96a9-10eb1608d6e0)
 
 ## 🖥️ Tech Stack 🖥️
-STREAMLIT FOR VERBAL
-HTML
-CSS
-BOOTSTRAP
+- STREAMLIT FOR VERBAL
+- HTML
+- CSS
+- BOOTSTRAP
 
-# Credits
-https://github.com/aman031298/health-website?tab=readme-ov-file
 
 ## 
    git clone https://github.com/neha222222/Medi-o-care.git
