@@ -36,22 +36,26 @@ Filtering and Sorting: Enable users to filter and sort doctors based on specialt
 Telemedicine Information: Include details on doctors who offer telemedicine services, including virtual consultations.
 
 ## Requirements
-langchain==0.0.284
-streamlit==1.22.0
-sentence-transformers
-chromadb
-pyttsx3
-SpeechRecognition
-openai
-CNN (Computer Neural Network)
-NLP(Natural language processing)
+-langchain==0.0.284
+-streamlit==1.22.0
+-sentence-transformers
+-chromadb
+-pyttsx3
+-SpeechRecognition
+-openai
+-CNN (Computer Neural Network)
+-NLP(Natural language processing)
 
 ## Installation and Azure technologies used for project
 OpenAI and Speech recognition
 Static web apps
 Health bot
-
-![image](https://github.com/neha222222/Medi-o-care/assets/132138786/3e21f378-88bc-4fb4-96a9-10eb1608d6e0)
+- WebPage
+![image](https://github.com/neha222222/Medi-o-care/assets/132138786/06643938-3363-4d64-a85f-6471fd38ce4c)
+- Chatbot
+  ![image](https://github.com/neha222222/Medi-o-care/assets/132138786/eb25b572-32a7-48d6-9582-3365423e9503)
+- Verbal Chatbot
+  ![image](https://github.com/neha222222/Medi-o-care/assets/132138786/62a2fc58-0fbe-4a89-83da-d4c7a3f43e0f)
 
 ## 🖥️ Tech Stack 🖥️
 - STREAMLIT FOR VERBAL
