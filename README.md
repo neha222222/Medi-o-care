@@ -35,5 +35,32 @@ Interactive Map: Display an interactive map to visualize the locations of health
 Filtering and Sorting: Enable users to filter and sort doctors based on specialties, availability, and ratings.
 Telemedicine Information: Include details on doctors who offer telemedicine services, including virtual consultations.
 
+## Requirements
+langchain==0.0.284
+streamlit==1.22.0
+sentence-transformers
+chromadb
+pyttsx3
+SpeechRecognition
+openai
+CNN (Computer Neural Network)
+NLP(Natural language processing)
+
+## Installation and Azure technologies used for project
+OpenAI and Speech recognition
+Static web apps
+Health bot
+
+![image](https://github.com/neha222222/Medi-o-care/assets/132138786/3e21f378-88bc-4fb4-96a9-10eb1608d6e0)
+
+## 🖥️ Tech Stack 🖥️
+STREAMLIT FOR VERBAL
+HTML
+CSS
+BOOTSTRAP
+
+# Credits
+https://github.com/aman031298/health-website?tab=readme-ov-file
+
 ## 
    git clone https://github.com/neha222222/Medi-o-care.git
