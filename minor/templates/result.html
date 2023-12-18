@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prediction Result</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            background: linear-gradient(135deg, #f1efef, #f9f8f8);
+        }
+        #container {
+            background-color: rgba(255, 255, 255, 0.8);
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            animation: fadeInUp 0.8s ease-out;
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        h2 {
+            color: #fbfafa;
+            font-size: 2.2em;
+            margin-bottom: 20px;
+        }
+        p {
+            margin-bottom: 20px;
+            font-size: 1.4em;
+            color: #333;
+        }
+        ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 2px solid #f9f7f8;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            font-size: 1.2em;
+        }
+        li:hover {
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+        }
+        strong {
+            color: #333;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-top: 30px;
+            animation: fadeIn 1s ease-out;
+        }
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="container">
+        <h2>Prediction Result</h2>
+        <p>The predicted disease is: <span style="color: #0c0c0c;">{{ predicted_disease }}</span></p>
+
+        {% if recommended_doctors %}
+            <h3 style="color: #333; font-size: 1.8em; margin-bottom: 20px;">Recommended Doctors</h3>
+            <ul>
+                {% for doctor in recommended_doctors %}
+                    <li>
+                        <strong>Name:</strong> {{ doctor.name }}<br>
+                        <strong>Address:</strong> {{ doctor.address }}<br>
+                        <!-- <strong>City:</strong> {{ doctor.city }}<br> -->
+                        <strong>Country:</strong> {{ doctor.country }}
+                    </li>
+                {% endfor %}
+            </ul>
+        {% else %}
+            <p style="color: #080808; font-size: 1.4em;">No recommended doctors found.</p>
+        {% endif %}
+    </div>
+</body>
+</html>

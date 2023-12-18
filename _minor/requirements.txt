@@ -1,0 +1,7 @@
+langchain==0.0.284
+streamlit==1.22.0
+sentence-transformers
+chromadb
+pyttsx3
+SpeechRecognition
+google-generativeai

@@ -1,0 +1,424 @@
+<!DOCTYPE html>
+<html lang="zxx">
+
+<head>
+    <title>Medi-Ö-Care</title>
+    <!-- Meta tag Keywords -->
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8" />
+    <meta name="keywords" content="Medi-Ö-Care Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template, Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
+    <script>
+        addEventListener("load", function() {
+            setTimeout(hideURLbar, 0);
+        }, false);
+
+        function hideURLbar() {
+            window.scrollTo(0, 1);
+        }
+
+    </script>
+    <!-- //Meta tag Keywords -->
+    <!-- Custom-Files -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/bootstrap.css') }}">
+<!-- Bootstrap-Core-CSS -->
+<link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}" type="text/css" media="all" />
+<link rel="stylesheet" href="{{ url_for('static', filename='css/slider.css') }}" type="text/css" media="all" />
+<!-- Style-CSS -->
+<!-- font-awesome-icons -->
+<link href="{{ url_for('static', filename='css/font-awesome.css') }}" rel="stylesheet">
+
+    <!-- //font-awesome-icons -->
+    <!-- /Fonts -->
+    <link href="//fonts.googleapis.com/css?family=Source+Sans+Pro:200,200i,300,300i,400,400i,600,600i,700" rel="stylesheet">
+    <link href="//fonts.googleapis.com/css?family=Dosis:200,300,400,500,600,700" rel="stylesheet">
+    <!-- //Fonts -->
+</head>
+
+<body>
+    <!-- mian-content -->
+<div class="main-w3layouts-header-sec inner" id="home">
+    <div class="overlay inner">
+        <!-- header -->
+        <header>
+            <div class="container">
+                <div class="header d-lg-flex justify-content-between align-items-center">
+                    <div class="header-section">
+                        <h1>
+                            <a class="navbar-brand logo editContent" href="{{ url_for('index') }}">
+                                <span class="fa fa-meetup"></span>edi-Ö-Care
+                            </a>
+                        </h1>
+                    </div>
+                    <div class="nav_section">
+                        <nav>
+                            <label for="drop" class="toggle mt-lg-0 mt-1"><span class="fa fa-bars" aria-hidden="true"></span></label>
+                            <input type="checkbox" id="drop" />
+                            <ul class="menu">
+                                <li><a href="{{ url_for('index') }}">Home</a></li>
+                                <li><a href="{{ url_for('healthbot') }}">Chatbot</a></li>
+                                <li class="active"><a href="{{ url_for('doctor') }}">Doctors</a></li>
+                                <li><a href="{{ url_for('contact') }}">Contact Us</a></li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+            </div>
+        </header>
+        <!-- //header -->
+    </div>
+</div>
+    <!-- //header -->
+
+    <!-- /breadcrumb -->
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="{{ url_for('index') }}">Home</a>
+        </li>
+        <li class="breadcrumb-item active">Doctors Table</li>
+    </ol>
+    <!-- //breadcrumb -->
+
+    <!-- Doctors Table Section -->
+    <section class="doctors-table py-5">
+        <div class="container">
+            <div class="header-w3layouts text-center mb-5">
+                <h3 class="title-w3pvt mb-5">Doctors Information</h3>
+            </div>
+
+            <table>
+                <thead>
+                  <tr>
+                    <th>NAME</th>
+                    <th>SPECIALISATION</th>
+                    <th>LINK</th>
+                  </tr>
+                </thead>
+                <tbody id="doctorsTableBody"></tbody>
+              </table>
+            
+              <script>
+                const doctors = [
+                    { 
+                    name: "Dr. Amarpreet Singh Riar", 
+                    specialization: "General Physician", 
+                    link: "https://www.practo.com/delhi/doctor/amarpreet-singh-riar-general-physician?specialization=General%20Physician&practice_id=1026302"
+                    },
+                    { 
+                    name: "Dr. (Maj.) Sharad Shrivastava", 
+                    specialization: "General Physician", 
+                    link: "https://www.practo.com/delhi/doctor/dr-54-general-physician-1?specialization=General%20Physician&practice_id=1071396"
+                    },
+                    { 
+                    name: "Dr. Anirban Biswas", 
+                    specialization: "Diabetologist", 
+                    link: "https://www.practo.com/delhi/doctor/anirban-biswas-diabetologist?specialization=General%20Physician&practice_id=789800"
+                    },
+                    { 
+                    name: "Dr. Aman Vij", 
+                    specialization: "General Physician", 
+                    link: "https://www.practo.com/delhi/doctor/dr-aman-vij-general-physician?specialization=General%20Physician&practice_id=704972"
+                    },
+                    { 
+                    name: "Dr. Mansi Arya", 
+                    specialization: "Homoeopath", 
+                    link: "https://www.practo.com/delhi/doctor/dr-mansi-arya-bhardwaj-homeopath?specialization=Homoeopath&practice_id=786334"
+                    },
+                    { 
+                    name: "Dr. Sunil Kumar Dwivedi", 
+                    specialization: "Homoeopath", 
+                    link: "https://www.practo.com/delhi/doctor/dr-sunil-kumar-dwivedi-homeopath?specialization=Homoeopath&practice_id=654411"
+                    },
+                    { 
+                    name: "Dr. Chhavi Bansal", 
+                    specialization: "Homoeopath", 
+                    link: "https://www.practo.com/delhi/doctor/dr-chhavi-bansal-homeopath-1?specialization=Homoeopath&practice_id=1124019"
+                    },
+                    { 
+                    name: "Dr. Sneh Khera", 
+                    specialization: "Homoeopath", 
+                    link: "https://www.practo.com/delhi/doctor/dr-sneh-khera-homeopath?specialization=Homoeopath&practice_id=709153"
+                    },
+                    { 
+                    name: "Dr. Inderjeet Singh", 
+                    specialization: "Homoeopath", 
+                    link: "https://www.practo.com/delhi/doctor/inderjeet-singh-ayurveda-sexologist?specialization=Homoeopath&practice_id=1219975"
+                    },
+                    { 
+                    name: "Dr. Suman Mohan", 
+                    specialization: "Homoeopath", 
+                    link: "https://www.practo.com/delhi/doctor/dr-suman-mohan-homoeopath?specialization=Homoeopath&practice_id=1173704"
+                    },
+                    { 
+                    name: "Dr. Manish Munjal", 
+                    specialization: "Ear-Nose-Throat (ENT) Specialist", 
+                    link: "https://www.practo.com/delhi/doctor/dr-manish-munjal-ear-nose-throat-ent-specialist-1?specialization=Ear-Nose-Throat%20(ENT)%20Specialist&practice_id=1045243"
+                    },
+                    { 
+                    name: "Dr. Ajay Jain", 
+                    specialization: "Ear-Nose-Throat (ENT) Specialist", 
+                    link: "https://www.practo.com/delhi/doctor/dr-ajay-jain-ear-nose-throat-ent-specialist-1?specialization=Ear-Nose-Throat%20(ENT)%20Specialist&practice_id=664069"
+                    },
+                    { 
+                    name: "Dr. Anshul Gupta", 
+                    specialization: "Ear-Nose-Throat (ENT) Specialist", 
+                    link: "https://www.practo.com/delhi/doctor/dr-anshul-gupta-ear-nose-throat-ent-specialist-1?specialization=Ear-Nose-Throat%20(ENT)%20Specialist&practice_id=712546"
+                    },
+                    { 
+                    name: "Dr. B B Khatri", 
+                    specialization: "Ear-Nose-Throat (ENT) Specialist", 
+                    link: "https://www.practo.com/delhi/doctor/dr-b-b-khatri-ear-nose-throat-ent-specialist?specialization=Ear-Nose-Throat%20(ENT)%20Specialist&practice_id=702104"
+                    },
+                    { 
+                    name: "Dr. Rajeev Adhana", 
+                    specialization: "Ear-Nose-Throat (ENT) Specialist", 
+                    link: "https://www.practo.com/delhi/clinic/adhana-ent-clinic-dilshad-garden?subscription_id=1296734&reach_subscription_id=45459&specialization=Ear-Nose-Throat%20(ENT)%20Specialist&ad_id=403277995611153&show_all=true"
+                    },
+                    { 
+                    name: "Dr. Vidit Tripathi", 
+                    specialization: "Ear-Nose-Throat (ENT) Specialist", 
+                    link: "https://www.practo.com/delhi/doctor/dr-vidit-tripathi-ear-nose-throat-ent-specialist-3?specialization=Ear-Nose-Throat%20(ENT)%20Specialist&practice_id=736234"
+                    },
+                    { 
+                    name: "Dr. Arun Wadhawan", 
+                    specialization: "Ear-Nose-Throat (ENT) Specialist", 
+                    link: "https://www.practo.com/delhi/doctor/dr-arun-wadhawan-ear-nose-throat-ent-specialist-1?specialization=Ear-Nose-Throat%20(ENT)%20Specialist&practice_id=710928"
+                    },
+                    { 
+                    name: "Dr. Neha Sood", 
+                    specialization: "Ear-Nose-Throat (ENT) Specialist", 
+                    link: "https://www.practo.com/delhi/doctor/dr-neha-sood-ear-nose-throat-ent-specialist-1?specialization=Ear-Nose-Throat%20(ENT)%20Specialist&practice_id=680128"
+                    },
+                    { 
+                    name: "Dr. Vineet Narula", 
+                    specialization: "Ear-Nose-Throat (ENT) Specialist", 
+                    link: "https://www.practo.com/delhi/doctor/vineet-narula-ear-nose-throat-ent-specialist-1?specialization=Ear-Nose-Throat%20(ENT)%20Specialist&practice_id=1107540"
+                    },
+                    { 
+                    name: "Dr. Yogesh Jain", 
+                    specialization: "Ear-Nose-Throat (ENT) Specialist", 
+                    link: "https://www.practo.com/delhi/doctor/dr-yogesh-jain-2-ear-nose-throat-ent-specialist?specialization=Ear-Nose-Throat%20(ENT)%20Specialist&practice_id=1118463"
+                    },
+                    { 
+                    name: "Dr. Rakesh Singh", 
+                    specialization: "Ear-Nose-Throat (ENT) Specialist", 
+                    link: "https://www.practo.com/delhi/doctor/dr-rakesh-singh-ear-nose-throat-ent-specialist?specialization=Ear-Nose-Throat%20(ENT)%20Specialist&practice_id=670997"
+                    },
+                    { 
+                    name: "Dr. Sudha Asokan", 
+                    specialization: "Ayurveda", 
+                    link: "https://www.practo.com/delhi/doctor/dr-sudha-asokan-ayurveda-1?specialization=Ayurveda&practice_id=654473"
+                    },
+                    { 
+                    name: "Dr. Mahesh Shah", 
+                    specialization: "Sexologist", 
+                    link: "https://www.practo.com/delhi/doctor/dr-shah-4-sexologist?specialization=Ayurveda&practice_id=688515"
+                    },
+                    { 
+                    name: "Dr. S K Singh", 
+                    specialization: "Ayurveda", 
+                    link: "https://www.practo.com/delhi/doctor/dr-s-k-singh-ayurveda?specialization=Ayurveda&practice_id=725617"
+                    },
+                    { 
+                    name: "Dr. Sudhir Bhola", 
+                    specialization: "Alternative Medicine", 
+                    link: "https://www.practo.com/delhi/doctor/sudhir-bhola-alternative-medicine?specialization=Ayurveda&practice_id=1065993"
+                    },
+                    { 
+                    name: "Dr. Jyoti Arora Monga", 
+                    specialization: "Ayurveda", 
+                    link: "https://www.practo.com/delhi/doctor/dr-jyoti-arora-ayurveda?specialization=Ayurveda&practice_id=693424"
+                    },
+                    { 
+                    name: "Dr. Vijay Abbot", 
+                    specialization: "Sexologist", 
+                    link: "https://www.practo.com/delhi/doctor/dr-vijay-abbot-sexologist?specialization=Ayurveda&practice_id=688515"
+                    },
+                    { 
+                    name: "Dr. Rakesh Gupta", 
+                    specialization: "Ayurveda", 
+                    link: "https://www.practo.com/delhi/doctor/dr-rakesh-gupta-ayurveda?specialization=Ayurveda&practice_id=825935"
+                    },
+                    { 
+                    name: "Dr. Sugeeta Mutreja", 
+                    specialization: "Dietitian Nutritionist", 
+                    link: "https://www.practo.com/delhi/doctor/sugeeta-mutreja-dietitian-nutritionist?specialization=Ayurveda&practice_id=1010860"
+                    },
+                    { 
+                    name: "Dr. Ruchi Gupta", 
+                    specialization: "Ayurveda", 
+                    link: "https://www.practo.com/delhi/doctor/dr-ruchi-gupta-1-ayurveda?specialization=Ayurveda&practice_id=825935"
+                    },
+                    { 
+                    name: "Dr. Praveen Rustagi", 
+                    specialization: "Ayurveda", 
+                    link: "https://www.practo.com/delhi/doctor/dr-praveen-rustagi-ayurveda?specialization=Ayurveda&practice_id=1121150"
+                    },
+                    { 
+                    name: "Dr. S.K Kashyap", 
+                    specialization: "Dermatologist", 
+                    link: "https://www.practo.com/delhi/doctor/s-k-kashyap-dermatologist-cosmetologist?specialization=Dermatologist&practice_id=767677"
+                    },
+                    { 
+                    name: "Dr. Nipun Jain", 
+                    specialization: "Dermatologist", 
+                    link: "https://www.practo.com/delhi/doctor/dr-nipun-jain-dermatologist-cosmetologist-2?specialization=Dermatologist&practice_id=850375"
+                    },
+                    { 
+                    name: "Dr. Rohit Batra", 
+                    specialization: "Dermatologist", 
+                    link: "https://www.practo.com/delhi/doctor/dr-rohit-batra-dermatologist-cosmetologist-1?specialization=Dermatologist&practice_id=673325"
+                    },
+                    { 
+                    name: "Dr. Lipy Gupta", 
+                    specialization: "Dermatologist", 
+                    link: "https://www.practo.com/delhi/doctor/dr-lipy-gupta-dermatologist-cosmetologist?specialization=Dermatologist&practice_id=689248"
+                    },
+                    { 
+                    name: "Dr. Gaurav Garg", 
+                    specialization: "Dermatologist", 
+                    link: "https://www.practo.com/delhi/doctor/dr-gaurav-garg-dermatologist-cosmetologist?specialization=Dermatologist&practice_id=690976"
+                    },
+                    { 
+                    name: "Dr. Parmil Kumar Sharma", 
+                    specialization: "Dermatologist", 
+                    link: "https://www.practo.com/delhi/doctor/dr-p-k-sharma-dermatologist-cosmetologist-1?specialization=Dermatologist&practice_id=896686"
+                    },
+                    { 
+                    name: "Dr. Shruti Gupta", 
+                    specialization: "Dermatologist", 
+                    link: "https://www.practo.com/delhi/doctor/shruti-gupta-dermatologist?specialization=Dermatologist&practice_id=1009300"
+                    },
+                    { 
+                    name: "Dr. Manisha Chopra", 
+                    specialization: "Dermatologist", 
+                    link: "https://www.practo.com/delhi/doctor/dr-manisha-chopra-dermatologist-cosmetologist?specialization=Dermatologist&practice_id=700888"
+                    },
+                    { 
+                    name: "Dr. Ranjan Upadhyay", 
+                    specialization: "Dermatologist", 
+                    link: "https://www.practo.com/delhi/doctor/dr-ranjan-upadhyay-dermatologist-cosmetologist-1-6350?specialization=Dermatologist&practice_id=649436"
+                    },
+                    { 
+                    name: "Dr. Gayatri Bala Juneja", 
+                    specialization: "Gynecologist/Obstetrician", 
+                    link: "https://www.practo.com/delhi/doctor/dr-gayatri-bala-juneja-gynecologist-obstetrician-2?specialization=Gynecologist/Obstetrician&practice_id=1010694"
+                    }
+                ];
+            
+                const tableBody = document.getElementById("doctorsTableBody");
+            
+                doctors.forEach(doctor => {
+                  const newRow = document.createElement("tr");
+                  const nameCell = document.createElement("td");
+                  const specializationCell = document.createElement("td");
+                  const linkCell = document.createElement("td");
+            
+                  nameCell.textContent = doctor.name;
+                  specializationCell.textContent = doctor.specialization;
+                  
+                  const link = document.createElement("a");
+                  link.href = doctor.link;
+                  link.textContent = "Profile";
+                  linkCell.appendChild(link);
+            
+                  newRow.appendChild(nameCell);
+                  newRow.appendChild(specializationCell);
+                  newRow.appendChild(linkCell);
+            
+                  tableBody.appendChild(newRow);
+                });
+              </script>
+            
+        </div>
+    </section>
+    <!-- //banner-bottom -->
+
+         <!-- footer -->
+         <footer>
+    <div class="container">
+        <div class="row footer-top">
+            <div class="col-lg-4 footer-grid_section_w3layouts">
+                <h2 class="logo-2 mb-lg-4 mb-3">
+                    <a href="{{ url_for('index') }}"><span class="fa fa-meetup"></span>edi-Ö-Care</a>
+                </h2>
+                <p>We are dedicated to nurturing well-being and making healthcare accessible to all. Your journey to optimal health begins here. Our commitment goes beyond accessibility; it's about creating a sanctuary for your health. With a harmonious blend of expertise and compassion, we pave the way for a journey that prioritizes you. </p>
+            </div>
+            <div class="col-lg-8 footer-right">
+                
+                <div class="row mt-lg-4 bottom-w3layouts-sec-nav mx-0">
+                    <div class="col-md-4 footer-grid_section_w3layouts">
+                        <h3 class="footer-title mb-lg-4 mb-3">Information</h3>
+                        <ul class="list-unstyled w3layouts-icons">
+                            <li>
+                                <a href="{{ url_for('index') }}">Home</a>
+                            </li>
+                            <li class="mt-3">
+                                <a href="{{ url_for('doctor') }}">Doctors</a>
+                            </li>
+                            <li class="mt-3">
+                                <a href="{{ url_for('contact') }}">Contact Us</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-md-4 footer-grid_section_w3layouts">
+                        <!-- social icons -->
+                        <div class="agileinfo_social_icons">
+                            <h3 class="footer-title mb-lg-4 mb-3">Customer Service</h3>
+                            <ul class="list-unstyled w3layouts-icons">
+                                <li>
+                                    <a href="{{ url_for('contact') }}">About Us</a>
+                                </li>
+                                <li class="mt-3">
+                                    <a href="#">Delivery & Returns</a>
+                                </li>
+                                <li class="mt-3">
+                                    <a href="#">Warranty</a>
+                                </li>
+                                <li class="mt-3">
+                                    <a href="#">Terms & Conditions</a>
+                                </li>
+                                <li class="mt-3">
+                                    <a href="#">Privacy Policy</a>
+                                </li>
+                            </ul>
+                        </div>
+                        <!-- social icons -->
+                    </div>
+                    <div class="col-md-4 footer-grid_section_w3layouts my-md-0 my-5">
+                        <h3 class="footer-title mb-lg-4 mb-3">Contact Info</h3>
+                        <div class="contact-info">
+                            <div class="footer-address-inf">
+                                <h4 class="ad-info mb-2">Phone</h4>
+                                <p>+91 98 8907 9987</p>
+                            </div>
+                            <div class="footer-address-inf my-4">
+                                <h4 class="ad-info mb-2">Email </h4>
+                                <p><a href="mailto:mediocare@gmail.com">mediocare@gmail.com</a></p>
+                            </div>
+                            <div class="footer-address-inf">
+                                <h4 class="ad-info mb-2">Location</h4>
+                                <p>Naya Raipur</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</footer>
+
+        <!-- //footer -->
+        <div class="cpy-right py-3">
+            <div class="container">
+                <div class="row">
+                    <!-- move top icon -->
+                    <a href="#home" class="move-top text-lg-right text-center col-md-2"><span class="fa fa-angle-double-up" aria-hidden="true"></span></a>
+                    <!-- //move top icon -->
+                </div>
+            </div>
+
+        </div>
+</body>
+
+</html>
