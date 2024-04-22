@@ -60,7 +60,7 @@ Health bot
 ## 🖥️ Tech Stack 🖥️
 - STREAMLIT FOR VERBAL
 - HTML
-- CSS
+- CSS  
 - BOOTSTRAP
 - PYTHON
 
