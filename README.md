@@ -62,6 +62,7 @@ Health bot
 - HTML
 - CSS
 - BOOTSTRAP
+- PYTHON
 
 
 ## 
