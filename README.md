@@ -5,7 +5,7 @@ Mediocare is a seamlessly integrate the platform into existing healthcare system
 The healthcare platform aims to address the challenges of strained healthcare resources and limited access to medical professionals by providing immediate assistance, health insights and information about medical conditions through natural conversations.
 
 Ultimately, the healthcare platform represents the potential of artificial intelligence in healthcare, offering accessible and responsive solutions to improve patient outcomes and overall well-being in the digital age.
-
+ 
 ## Features
 
 - Verbal Speech Chatbot:
