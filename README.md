@@ -37,7 +37,7 @@ Telemedicine Information: Include details on doctors who offer telemedicine serv
 
 ## Requirements
 -langchain==0.0.284
--streamlit==1.22.0
+-streamlit==1.22.0 
 -sentence-transformers
 -chromadb
 -pyttsx3
